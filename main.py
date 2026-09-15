@@ -22,7 +22,7 @@ def parse_row(row: str) -> list:
     Date = values[1]
     Patient_name = values[2]
 
-    if values[3] == "":
+    if "" in values:
         raise MissingValueException()
 
     try:
@@ -40,7 +40,6 @@ def parse_row(row: str) -> list:
 
 def main():
     
-    # your code here
     input_file=open("data.csv", "r")
 
     output_file=open("output.csv", "w")
